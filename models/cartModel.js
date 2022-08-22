@@ -1,12 +1,12 @@
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-const getAllCarts = () => {
+const getCarts = () => {
   return fetch("https://fakestoreapi.com/carts").then((res) => res.json());
 };
 
 let carts = {
-  getAllCarts,
+  getCarts,
 };
 
 module.exports = carts;
