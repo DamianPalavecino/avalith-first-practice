@@ -10,28 +10,33 @@ router.get("/", date.currentDate, (_req, res) => {
   res.send("Hello World!");
 });
 
-// Basic Endpoints for Products/
+// Middleware to get the date of all requests
+router.use(date.currentDate);
 
-router.get("/products", date.currentDate, productsController.sendAllProducts);
-router.get("/products/categories", productsController.sendCategories); // To be modified
+// Endpoints for Products/
+router.get("/products", productsController.sendAllProducts);
+router.get("/products/categories", productsController.sendCategories);
 router.get("/products/:id", productsController.sendProductById);
 router.get(
   "/products/category/:category",
   productsController.sendProductsbyCategory
 );
+router.get("/categories", productsController.sendAllCategories);
 
 router.get("/prices", productsController.sendProductsOrderedByPrice); // You can use the query 'order' to sort prices in either ascending or descending order.
+router.get("/expensive", productsController.sendMostExpensiveProducts);
 
-// Basic Endpoints for Carts/
+// Endpoints for Carts/
 
 router.get("/carts", cartsController.sendCarts);
 router.get("/carts/:id", cartsController.sendCartById);
 router.get("/carts/user/:id", cartsController.sendCartsByUserId);
+router.get("/bigcarts", cartsController.sendBigCarts);
 
-// Basic Endpoints for Users/
+// Endpoints for Users/
 
 router.get("/users", usersController.sendUsers);
-router.get("/users/firsts", usersController.sendFirstThreeUsers); //);
+router.get("/users/firsts", usersController.sendFirstThreeUsers);
 router.get("/users/:id", usersController.sendUserById);
 
 // Middleware for error handling
