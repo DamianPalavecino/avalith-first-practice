@@ -1,23 +1,47 @@
 # Fake Store API
 
-Para simular la base de datos en su lugar vamos a utilizar la API https://fakestoreapi.com/ para que nos proporcione la funcionalidad de nuestros modelos, es imperativo que seamos capaces de usar las funcionalidades básicas de la API a través de nuestra API
+To simulate the database, we are instead going to use the API https://fakestoreapi.com/ which will provide us with the functionality of our models. It is imperative that we are able to use the basic functionalities of the API through our API.
 
-# Consigna
+# Task
 
-- Crear un proyecto e instalar los módulos correspondientes, crear las carpetas correspondientes para modelos, controladores y middlewares
-- Crear un archivo app.js que levante el proyecto en localhost:3000, y utilice un Express.router
-- Usando la API proporcionada generar modelos para Producto, Carrito y Usuario
-- Crear un middleware para imprimir por consola la fecha en la que se hace cada request
-- Crear un middleware que maneje los errores 404
-- Crear los endpoints que se piden en la siguiente diapositiva y que cumplan sus funcionalidades
-
-Fecha de entrega: 22 de Agosto
+- Create a project and install the corresponding modules, create the corresponding folders for models, drivers and middlewares.
+- Create an app.js file that hosts the project on localhost:3000 and uses an Express.router
+- Using the provided API generate models for Product, Cart and User
+- Create a middleware to print by console the date on which each request is made
+- Create a middleware to handle 404 errors
+- Create the requested endpoints with their functionalities.
 
 # Endpoints
 
-- Todos los endpoints básicos de la API de Fakestore se deben poder acceder a través de nuestra API, ej: /products, /products/:id, y sus análogos para Categorías, carritos y usuarios
-- GET /products/categories debe devolver un array de objetos que tenga el nombre de la categoria y un array con todos los productos pertenecientes a la categoria
-- GET /users/firsts debe devolver los primeros 3 usuarios ordenados por ID
-- GET /prices debe devolver una lista de productos que tengan id, titulo y precio de cada producto y que se pueda ordenar por precio y se pueda elegir si en orden ascendiente o descendiente a traves de un query “order”
-- GET /expensive debe devolver todos los productos que sean los más caros de su categoria
-- GET /bigcarts debe devolver todos los carritos que tengan más de 2 productos y que diga el nombre del usuario que ordeno ese carrito
+- All basic Fakestore API endpoints must be accessible through our API, e.g. /products, /products/:id, and their analogues for Categories, Carts and Users.
+- GET /products/categories must return an array of objects that has the category name and an array with all the products belonging to the category.
+- GET /users/firsts should return the first 3 users sorted by ID.
+- GET /prices should return a list of products that have id, title and price of each product and that can be sorted by price and you can choose if in ascending or descending order through a query "order".
+- GET /expensive should return all products that are the most expensive in their category.
+- GET /bigcarts should return all carts that have more than 2 products and the name of the user who ordered that cart.
+
+# How to run this project
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/DamianPalavecino/avalith-first-practice.git
+```
+
+2. Access the main folder
+
+```bash
+cd .\avalith-first-practice\
+```
+
+3. Install npm packages
+
+```bash
+npm install
+```
+
+4. Run the project
+
+```bash
+npm start
+```
